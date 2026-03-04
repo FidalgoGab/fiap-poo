@@ -1,9 +1,27 @@
 package br.com.fiapride.model;
 
 public class Animal {
-    public String nome;
-    public int numeroPatas;
-    public boolean voa;
+    private String nome;
+    private int numeroPatas;
+    private boolean voa;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getNumeroPatas() {
+        return numeroPatas;
+    }
+
+    public boolean getVoa() {
+        return voa;
+    }
+
+    public Animal(String nome, int numeroPatas, boolean voa) {
+        this.nome = nome;
+        this.numeroPatas = numeroPatas;
+        this.voa = voa;
+    }
 
     public void voar() {
         if(this.voa){
