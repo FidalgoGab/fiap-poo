@@ -5,21 +5,37 @@ public class Animal {
     private int numeroPatas;
     private boolean voa;
 
+    public Animal(String nome, int numeroPatas, boolean voa) {
+        this.setNome(nome);
+        this.setNumeroPatas(numeroPatas);
+        this.setVoa(voa);
+    }
+
     public String getNome() {
         return nome;
+    }
+
+    private void setNome(String nome) {
+        if(nome.isEmpty()){
+            System.out.println("Nome não pode ser vazio, informe um nome válido.");
+            return;
+        }
+        this.nome = nome;
     }
 
     public int getNumeroPatas() {
         return numeroPatas;
     }
 
+    private void setNumeroPatas(int numeroPatas) {
+        this.numeroPatas = numeroPatas;
+    }
+
     public boolean getVoa() {
         return voa;
     }
 
-    public Animal(String nome, int numeroPatas, boolean voa) {
-        this.nome = nome;
-        this.numeroPatas = numeroPatas;
+    private void setVoa(boolean voa) {
         this.voa = voa;
     }
 
@@ -32,6 +48,6 @@ public class Animal {
     }
 
     public void renomear(String nome){
-        this.nome = nome;
+        this.setNome(nome);
     }
 }

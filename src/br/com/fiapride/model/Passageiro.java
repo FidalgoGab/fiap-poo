@@ -1,14 +1,38 @@
 package br.com.fiapride.model;
 
 public class Passageiro {
-    public String nome;
-    public double saldo;
-    public String cpf;
+    private String nome;
+    private double saldo;
+    private String cpf;
 
     public Passageiro(String nome, String cpf) {
+        this.setNome(nome);
+        this.setCpf(cpf);
+        this.setSaldo(0.0);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    private void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    private void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    private void setCpf(String cpf) {
         this.cpf = cpf;
-        this.saldo = 0.0;
     }
 
     public void adicionarSaldo(double valor){
