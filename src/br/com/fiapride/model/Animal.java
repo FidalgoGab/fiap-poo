@@ -4,11 +4,13 @@ public class Animal {
     private String nome;
     private int numeroPatas;
     private boolean voa;
+    private Alimentacao alimentacao;
 
-    public Animal(String nome, int numeroPatas, boolean voa) {
+    public Animal(String nome, int numeroPatas, boolean voa, Alimentacao alimentacao) {
         this.setNome(nome);
         this.setNumeroPatas(numeroPatas);
         this.setVoa(voa);
+        this.alimentacao = alimentacao;
     }
 
     public String getNome() {
@@ -25,6 +27,10 @@ public class Animal {
 
     public int getNumeroPatas() {
         return numeroPatas;
+    }
+
+    public String getAlimentacao() {
+        return String.format("%.2f",this.alimentacao.getPorcaoKg()) + "kg de " + this.alimentacao.getNome();
     }
 
     private void setNumeroPatas(int numeroPatas) {
@@ -45,6 +51,18 @@ public class Animal {
         } else {
             System.out.println("Esse animal não consegue voar");
         }
+    }
+
+    public void alimentar(double kg) {
+        if(this.alimentacao.getPorcaoKg() - kg < 0){
+            System.out.println("Não é possível alimentar-se mais do que está disponível");
+            return;
+        }
+        this.alimentacao.setPorcaoKg(this.alimentacao.getPorcaoKg() - kg);
+    }
+
+    public void adicionarComida(double kg) {
+        this.alimentacao.setPorcaoKg(this.alimentacao.getPorcaoKg() + kg);
     }
 
     public void renomear(String nome){
