@@ -2,41 +2,43 @@ package br.com.fiapride.main;
 
 import br.com.fiapride.model.Alimentacao;
 import br.com.fiapride.model.Animal;
+import br.com.fiapride.model.Formiga;
+import br.com.fiapride.model.Passaro;
 
 public class TesteAnimal {
     public static void main(String[] args) {
-        Alimentacao alimentacao1 = new Alimentacao("Ração", 0.400);
-        Alimentacao alimentacao2 = new Alimentacao("Alpiste", 0.150);
+        Alimentacao alimentacaoF = new Alimentacao("Restos de animais e comida", 0.100);
+        Alimentacao alimentacaoP = new Alimentacao("Alpiste", 0.250);
 
-        Animal animal1 = new Animal("Pet", 4, false, alimentacao1);
-        Animal animal2 = new Animal("Loro", 2, true, alimentacao2);
+        Formiga formiga = new Formiga("Fifi", 6, false, alimentacaoF, true);
+        Passaro passaro = new Passaro("Loro", 2, true, alimentacaoP, "Cacatua", "Branca");
 
         System.out.println("\n--- Sistema FiapRide (Animal) ---");
-        System.out.println("Animal1: " + animal1.getNome() + " | Patas: " + animal1.getNumeroPatas() + " | Voa: " + (animal1.getVoa() ? "Sim" : "Não") + " Alimentação: " + animal1.getAlimentacao());
-        System.out.println("Animal2: " + animal2.getNome() + " | Patas: " + animal2.getNumeroPatas() + " | Voa: " + (animal2.getVoa() ? "Sim" : "Não") + " Alimentação: " + animal2.getAlimentacao());
+        System.out.println("Formiga: " + formiga.getNome() + " | Patas: " + formiga.getNumeroPatas() + " | Voa: " + (formiga.getVoa() ? "Sim" : "Não") + " | Alimentação: " + formiga.getAlimentacao() + " | É rainha: " + (formiga.isRainha() ? "Sim" : "Não"));
+        System.out.println("Passaro: " + passaro.getNome() + " | Patas: " + passaro.getNumeroPatas() + " | Voa: " + (passaro.getVoa() ? "Sim" : "Não") + " | Alimentação: " + passaro.getAlimentacao() + " | Espécie: " + passaro.getEspecie() + " | Coloração: " + passaro.getColoracao());
 
-        animal1.renomear("Mena");
+        formiga.renomear("Mena");
 
-        System.out.println("\nAnimal1: " + animal1.getNome() + " | Patas: " + animal1.getNumeroPatas() + " | Voa: " + (animal1.getVoa() ? "Sim" : "Não"));
+        System.out.println("\nFormiga: " + formiga.getNome() + " | Patas: " + formiga.getNumeroPatas() + " | Voa: " + (formiga.getVoa() ? "Sim" : "Não"));
 
-        System.out.println("\nAnimal1 tenta voar");
-        animal1.voar();
-        System.out.println("\nAnimal2 tenta voar");
-        animal2.voar();
+        System.out.println("\nFormiga tenta voar");
+        formiga.voar();
+        System.out.println("\nPássaro tenta voar");
+        passaro.voar();
 
         //Testando regra do setNome.
         //OBS: Como setNome é privado, vamos usar o metodo renomear() que internamente chama setNome().
         System.out.println("\n\nRenomeando animal sem valor (aspas vazias):");
-        System.out.println("Nome antes de renomear: " + animal2.getNome());
-        animal2.renomear("");
-        System.out.println("Nome após renomear: " + animal2.getNome());
+        System.out.println("Nome antes de renomear: " + passaro.getNome());
+        passaro.renomear("");
+        System.out.println("Nome após renomear: " + passaro.getNome());
         System.out.println("\nRenomeando animal com valor:");
-        System.out.println("Nome antes de renomear: " + animal2.getNome());
-        animal2.renomear("Pitico");
-        System.out.println("Nome após renomear: " + animal2.getNome());
+        System.out.println("Nome antes de renomear: " + passaro.getNome());
+        passaro.renomear("Pitico");
+        System.out.println("Nome após renomear: " + passaro.getNome());
 
         //Animal1 se alimenta
-        animal1.alimentar(0.1);
-        System.out.println("\n\nApós comer sobrou: " +animal1.getAlimentacao());
+        formiga.alimentar(0.1);
+        System.out.println("\n\nApós Formiga comer sobrou: " +formiga.getAlimentacao());
     }
 }
