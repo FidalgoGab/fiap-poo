@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-public class Animal {
+public abstract class Animal {
     private String nome;
     private int numeroPatas;
     private boolean voa;
@@ -69,7 +69,5 @@ public class Animal {
         this.setNome(nome);
     }
 
-    public void emitirSom() {
-        System.out.println("Esse animal não emite som conhecido");
-    }
+    public abstract void emitirSom();
 }

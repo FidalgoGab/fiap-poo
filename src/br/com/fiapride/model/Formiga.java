@@ -16,4 +16,8 @@ public class Formiga extends Animal{
         this.isRainha = rainha;
     }
 
+    @Override
+    public void emitirSom() {
+        System.out.println("Pfffff (super som da formiga)!");
+    }
 }
