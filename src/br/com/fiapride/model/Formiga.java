@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-public class Formiga extends Animal{
+public class Formiga extends Animal implements Locomocao{
     private boolean isRainha;
 
     public Formiga(String nome, int numeroPatas, boolean voa, Alimentacao alimentacao, boolean isRainha) {
@@ -19,5 +19,10 @@ public class Formiga extends Animal{
     @Override
     public void emitirSom() {
         System.out.println("Pfffff (super som da formiga)!");
+    }
+
+    @Override
+    public void deslocar() {
+        System.out.println("Formiga se deslocando rastejando pelo solo!");
     }
 }

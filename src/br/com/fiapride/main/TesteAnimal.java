@@ -50,5 +50,13 @@ public class TesteAnimal {
         System.out.println("\nSom do pássaro:");
         passaro.emitirSom();
 
+        //Teste da Interface Locomocao
+        System.out.println("\n\n--------------");
+        System.out.println("Testando Interface Locomocao:");
+        System.out.println("\nLocomoção da formiga:");
+        formiga.deslocar();
+        System.out.println("\nLocomoção do pássaro:");
+        passaro.deslocar();
+
     }
 }

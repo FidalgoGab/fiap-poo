@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-public class Passaro extends  Animal{
+public class Passaro extends  Animal implements Locomocao{
     private final String especie;
     private final String coloracao;
 
@@ -21,5 +21,10 @@ public class Passaro extends  Animal{
     @Override
     public void emitirSom() {
         System.out.println("Piu piu (assobio)!");
+    }
+
+    @Override
+    public void deslocar() {
+        System.out.println("Pássaro se deslocando voando pelo ar!");
     }
 }
