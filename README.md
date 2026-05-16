@@ -157,7 +157,7 @@ Se o Java permitisse herança múltipla, teríamos ambiguidade: qual `ligar()` s
 - `Locomocao` (interface para comportamento de deslocamento)
 
 **Maior Desafio Técnico:**
-Não tive um grande desafio técnico pois já dominava POO e seus conceitos. O mais trabalhoso de implementar e idealizar foi a classe Alimentacao que está como um atributo de Animal.
+Não tive um grande desafio técnico pois já dominava POO e seus conceitos. O mais trabalhoso de implementar e idealizar foi a classe Alimentacao que está como um atributo de Animal. Além disso, desenvolver o Astah, a minha licença expirou e não consegui finalizar a implementação.
 
 ---
 
